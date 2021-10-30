@@ -1,14 +1,14 @@
 package com.fclass;
 
-/**
- * Hello world!
- *
- */
-public class App 
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class App
 {
     public static void main( String[] args )
     {
-        Car civic = new Car("toyota", "civic" ,2010);
-        Bike cd70 = new Bike("honda","cd70" , 2020);
+        ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
+        Vehicle civic = (Vehicle ) context.getBean("car");
+        civic.drive();
     }
 }
