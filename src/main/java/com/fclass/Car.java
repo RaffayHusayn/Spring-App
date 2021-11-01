@@ -4,6 +4,7 @@ import org.springframework.stereotype.Component;
 
 
 public class Car implements Vehicle{
+    static String staticName = "this is a static name";
     String brand;
     String name;
     int year;
@@ -37,7 +38,7 @@ public class Car implements Vehicle{
         this.name = name;
         this.year = year;
 
-        System.out.println("using argument constructor:::: brand : "+ this.brand + " name : "+ this.name);
+        System.out.println("usingjkla argument constructor:::: brand : "+ this.brand + " name : "+ this.name);
     }
     @Override
     public void drive(){
