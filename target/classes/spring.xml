@@ -10,17 +10,17 @@
     <context:component-scan base-package="com.fclass"></context:component-scan>
 
     <bean id="car" class="com.fclass.Car">
-        <constructor-arg index="0" value="toyota"/>
-        <constructor-arg index="1" value="corolla"/>
-        <constructor-arg index="2" value="1992"/>
+<!--        <constructor-arg index="0" value="toyota"/>-->
+<!--        <constructor-arg index="1" value="corolla"/>-->
+<!--        <constructor-arg index="2" value="1992"/>-->
     </bean>
 
     <bean id="bike" class="com.fclass.Bike">
     </bean>
 
-    <bean id="tyre" class="com.fclass.Tyre">
-        <property name="brand" value="Panther"/>
-        <constructor-arg index= "0" type="java.lang.String" value="Osaka"/>
-    </bean>
+<!--    <bean id="tyre" class="com.fclass.Tyre">-->
+<!--        <constructor-arg index= "0" type="java.lang.String" value="Osaka"/> &lt;!&ndash; uses the Constructor of the Tyre Class&ndash;&gt;-->
+<!--        <property name="brand" value="Panther"/> &lt;!&ndash; uses the Setter method of the Tyre Class&ndash;&gt;-->
+<!--    </bean>-->
 
 </beans>

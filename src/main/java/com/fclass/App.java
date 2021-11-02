@@ -10,8 +10,6 @@ public class App
         ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
 
         Car civic = (Car) context.getBean("car");
-        System.out.println(Car.staticName);
-//        civic.getTyre().setBrand("something other");
-        System.out.println(civic.getTyre());
+        civic.drive();
     }
 }
