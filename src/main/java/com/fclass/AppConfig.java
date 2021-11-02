@@ -11,4 +11,8 @@ public class AppConfig {
 //    public Car getCar(){
 //        return new Car();
 //    }
+    @Bean
+    public Tyre getTyre(){
+        return new Tyre("Annotation brand");
+    }
 }
