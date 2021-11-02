@@ -8,9 +8,10 @@ public class App
     public static void main( String[] args )
     {
         ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
-//       Car civic = (Car) context.getBean("car");
-        System.out.println(Car.staticName);
-//        System.out.println(civic.getName());
 
+        Car civic = (Car) context.getBean("car");
+        System.out.println(Car.staticName);
+//        civic.getTyre().setBrand("something other");
+        System.out.println(civic.getTyre());
     }
 }

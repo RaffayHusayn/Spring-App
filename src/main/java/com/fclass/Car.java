@@ -7,6 +7,7 @@ public class Car implements Vehicle{
     static String staticName = "this is a static name";
     String brand;
     String name;
+    Tyre  tyre;
     int year;
 
     public String getBrand() {
@@ -33,12 +34,21 @@ public class Car implements Vehicle{
         this.year = year;
     }
 
-    public Car(String brand, String name, int year){
+    public Tyre getTyre() {
+        return tyre;
+    }
+
+    public void setTyre(Tyre tyre) {
+        this.tyre = tyre;
+    }
+
+    public Car(String brand, String name, int year, Tyre  t){
         this.brand = brand;
         this.name = name;
         this.year = year;
+        this.tyre = t;
 
-        System.out.println("usingjkla argument constructor:::: brand : "+ this.brand + " name : "+ this.name);
+        System.out.println("Car constructor is called with -> brand : "+ this.brand + " name : "+ this.name);
     }
     @Override
     public void drive(){
