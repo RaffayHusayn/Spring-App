@@ -1,13 +1,17 @@
 package com.fclass;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component
 public class Car implements Vehicle{
     static String staticName = "this is a static name";
+    @Value("setter brand value ")
     String brand;
+    @Value("setter tyre name")
     String name;
+    @Value("12")
     int year;
     @Autowired
     Tyre  tyre;
@@ -56,5 +60,6 @@ public class Car implements Vehicle{
     @Override
     public void drive(){
         System.out.println("the car is driving : " + tyre);
+        System.out.println("||| brand : "+ brand + " ||| name : "+ name + "||| Year : "+ year);
     }
 }
