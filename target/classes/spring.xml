@@ -20,8 +20,8 @@
     </bean>
 
     <bean id="tyre" class="com.fclass.SnowTyre">
-<!--        <constructor-arg index= "0" type="java.lang.String" value="Osaka"/> &lt;!&ndash; uses the Constructor of the Tyre Class&ndash;&gt;-->
-        <property name="brand" value="Panther"/> <!-- uses the Setter method of the Tyre Class-->
+        <constructor-arg index= "0" type="java.lang.String" value="Osaka"/> <!-- uses the Constructor of the Tyre Class-->
+        <property name="brand" value="setter tyre brand"/> <!-- uses the Setter method of the Tyre Class-->
     </bean>
 
 </beans>

@@ -7,6 +7,9 @@ import org.springframework.stereotype.Component;
 //@Primary
 public class SnowTyre implements Tyre{
     String brand ;
+    public SnowTyre(String b){
+        this.brand = b ;
+    }
 
     public void setBrand(String b){
         this.brand = b;

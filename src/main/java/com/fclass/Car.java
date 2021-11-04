@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
+import java.sql.SQLOutput;
+
 @Component
 public class Car implements Vehicle{
     static String staticName = "this is a static name";
@@ -54,8 +56,8 @@ public class Car implements Vehicle{
         this.name = name;
         this.year = year;
         this.tyre = t;
-
         System.out.println("Car constructor is called with -> brand : "+ this.brand + " name : "+ this.name);
+        System.out.println(tyre);
     }
     @Override
     public void drive(){
