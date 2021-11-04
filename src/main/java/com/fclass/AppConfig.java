@@ -3,6 +3,7 @@ package com.fclass;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 
 @Configuration
 @ComponentScan("com.fclass")
@@ -12,7 +13,8 @@ public class AppConfig {
 //        return new Car();
 //    }
     @Bean
-    public Tyre getTyre(){
-        return new Tyre("Annotation brand");
+    @Primary
+    public RaceTyre getTyre(){
+        return new RaceTyre("Annotation brand");
     }
 }

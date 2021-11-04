@@ -14,7 +14,7 @@ public class Car implements Vehicle{
     @Value("12")
     int year;
     @Autowired
-    Tyre  tyre;
+    Tyre tyre;
 
 
     public String getBrand() {
@@ -45,7 +45,7 @@ public class Car implements Vehicle{
         return tyre;
     }
 
-    public void setTyre(Tyre tyre) {
+    public void setTyre(RaceTyre tyre) {
         this.tyre = tyre;
     }
 
@@ -59,6 +59,8 @@ public class Car implements Vehicle{
 //    }
     @Override
     public void drive(){
+        tyre.maxSpeed();
+        System.out.println("\n");
         System.out.println("the car is driving : " + tyre);
         System.out.println("||| brand : "+ brand + " ||| name : "+ name + "||| Year : "+ year);
     }

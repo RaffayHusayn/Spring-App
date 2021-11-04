@@ -10,7 +10,7 @@ public class App
     {
         ApplicationContext factory = new AnnotationConfigApplicationContext(AppConfig.class);
 
-        Car civic = factory.getBean(Car.class);
+        Vehicle civic = factory.getBean(Car.class);
         civic.drive();
     }
 }
