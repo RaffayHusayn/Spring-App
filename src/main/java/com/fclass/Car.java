@@ -13,7 +13,7 @@ public class Car implements Vehicle{
     String name;
     @Value("12")
     int year;
-    @Autowired
+//    @Autowired
     Tyre tyre;
 
 
@@ -49,14 +49,14 @@ public class Car implements Vehicle{
         this.tyre = tyre;
     }
 
-//    public Car(String brand, String name, int year, Tyre  t){
-//        this.brand = brand;
-//        this.name = name;
-//        this.year = year;
-//        this.tyre = t;
-//
-//        System.out.println("Car constructor is called with -> brand : "+ this.brand + " name : "+ this.name);
-//    }
+    public Car(String brand, String name, int year, Tyre  t){
+        this.brand = brand;
+        this.name = name;
+        this.year = year;
+        this.tyre = t;
+
+        System.out.println("Car constructor is called with -> brand : "+ this.brand + " name : "+ this.name);
+    }
     @Override
     public void drive(){
         tyre.maxSpeed();

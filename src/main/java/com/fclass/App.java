@@ -8,9 +8,13 @@ public class App
 {
     public static void main( String[] args )
     {
-        ApplicationContext factory = new AnnotationConfigApplicationContext(AppConfig.class);
+//        ApplicationContext factory = new AnnotationConfigApplicationContext(AppConfig.class);
+//
+//        Vehicle civic = factory.getBean(Car.class);
+//        civic.drive();
 
-        Vehicle civic = factory.getBean(Car.class);
+        ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
+        Vehicle civic = context.getBean("car", Vehicle.class);
         civic.drive();
     }
 }

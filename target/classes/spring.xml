@@ -7,19 +7,20 @@
            http://www.springframework.org/schema/context
            http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <context:component-scan base-package="com.fclass"></context:component-scan>
+<!--    <context:component-scan base-package="com.fclass"></context:component-scan>-->
 
     <bean id="car" class="com.fclass.Car">
         <constructor-arg index="0" value="toyota"/>
         <constructor-arg index="1" value="corolla"/>
         <constructor-arg index="2" value="1992"/>
+        <constructor-arg index="3" ref="tyre"/>
     </bean>
 
     <bean id="bike" class="com.fclass.Bike">
     </bean>
 
-    <bean id="tyre" class="com.fclass.RaceTyre">
-        <constructor-arg index= "0" type="java.lang.String" value="Osaka"/> <!-- uses the Constructor of the Tyre Class-->
+    <bean id="tyre" class="com.fclass.SnowTyre">
+<!--        <constructor-arg index= "0" type="java.lang.String" value="Osaka"/> &lt;!&ndash; uses the Constructor of the Tyre Class&ndash;&gt;-->
         <property name="brand" value="Panther"/> <!-- uses the Setter method of the Tyre Class-->
     </bean>
 
