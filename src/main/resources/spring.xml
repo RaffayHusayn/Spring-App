@@ -20,6 +20,12 @@
                 <constructor-arg index="1" value="vroom vroom"/>
             </bean>
         </constructor-arg>
+        <property name="engine">
+            <bean class="com.fclass.Engine">
+                <constructor-arg index="0" value ="setterEngineCompany"/>
+                <constructor-arg index="1" value="burrrrrr.r...r..r"/>
+            </bean>
+        </property>
     </bean>
 
     <bean id="bike" class="com.fclass.Bike">
