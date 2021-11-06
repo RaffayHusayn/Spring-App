@@ -14,6 +14,12 @@
         <constructor-arg index="1" value="corolla"/>
         <constructor-arg index="2" value="1992"/>
         <constructor-arg index="3" ref="tyre"/>
+        <constructor-arg index="4">
+            <bean class="com.fclass.Engine">
+                <constructor-arg index="0" value ="boeing"/>
+                <constructor-arg index="1" value="vroom vroom"/>
+            </bean>
+        </constructor-arg>
     </bean>
 
     <bean id="bike" class="com.fclass.Bike">

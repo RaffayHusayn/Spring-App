@@ -17,7 +17,15 @@ public class Car implements Vehicle{
     int year;
 //    @Autowired
     Tyre tyre;
+    Engine engine;
 
+    public Engine getEngine() {
+        return engine;
+    }
+
+    public void setEngine(Engine engine) {
+        this.engine = engine;
+    }
 
     public String getBrand() {
         return brand;
@@ -51,19 +59,21 @@ public class Car implements Vehicle{
         this.tyre = tyre;
     }
 
-    public Car(String brand, String name, int year, Tyre  t){
+    public Car(String brand, String name, int year, Tyre  t, Engine e){
         this.brand = brand;
         this.name = name;
         this.year = year;
         this.tyre = t;
+        this.engine = e;
         System.out.println("Car constructor is called with -> brand : "+ this.brand + " name : "+ this.name);
         System.out.println(tyre);
+        System.out.println(engine);
     }
     @Override
     public void drive(){
         tyre.maxSpeed();
-        System.out.println("\n");
         System.out.println("the car is driving : " + tyre);
+        System.out.println("the engine is driving : " + engine);
         System.out.println("||| brand : "+ brand + " ||| name : "+ name + "||| Year : "+ year);
     }
 }

@@ -15,6 +15,8 @@ public class App
 
         ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
         Vehicle civic = context.getBean("car", Vehicle.class);
+        System.out.println("\n");
+        System.out.println("\n");
         civic.drive();
     }
 }
