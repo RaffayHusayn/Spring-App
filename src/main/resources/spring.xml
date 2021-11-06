@@ -6,27 +6,51 @@
            http://www.springframework.org/schema/beans/spring-beans.xsd
            http://www.springframework.org/schema/context
            http://www.springframework.org/schema/context/spring-context.xsd">
-
+<!-- use this to use @component annotation -->
 <!--    <context:component-scan base-package="com.fclass"></context:component-scan>-->
 
-    <bean id="car" class="com.fclass.Car">
-        <constructor-arg index="0" value="toyota"/>
-        <constructor-arg index="1" value="corolla"/>
-        <constructor-arg index="2" value="1992"/>
-        <constructor-arg index="3" ref="tyre"/>
-        <constructor-arg index="4">
-            <bean class="com.fclass.Engine">
-                <constructor-arg index="0" value ="boeing"/>
-                <constructor-arg index="1" value="vroom vroom"/>
-            </bean>
-        </constructor-arg>
-        <property name="engine">
-            <bean class="com.fclass.Engine">
-                <constructor-arg index="0" value ="setterEngineCompany"/>
-                <constructor-arg index="1" value="burrrrrr.r...r..r"/>
-            </bean>
-        </property>
+
+
+
+ <!--Car xml config using nested beans -->
+<!--    <bean id="car" class="com.fclass.Car">-->
+<!--        <constructor-arg index="0" value="toyota"/>-->
+<!--        <constructor-arg index="1" value="corolla"/>-->
+<!--        <constructor-arg index="2" value="1992"/>-->
+<!--        <constructor-arg index="3" ref="tyre"/>-->
+<!--        <constructor-arg index="4">-->
+<!--            <bean class="com.fclass.Engine">-->
+<!--                <constructor-arg index="0" value ="boeing"/>-->
+<!--                <constructor-arg index="1" value="vroom vroom"/>-->
+<!--            </bean>-->
+<!--        </constructor-arg>-->
+<!--        <property name="engine">-->
+<!--            <bean class="com.fclass.Engine">-->
+<!--                <constructor-arg index="0" value ="setterEngineCompany"/>-->
+<!--                <constructor-arg index="1" value="burrrrrr.r...r..r"/>-->
+<!--            </bean>-->
+<!--        </property>-->
+<!--    </bean>-->
+
+
+
+   <bean id="engine" class="com.fclass.Engine">
+       <constructor-arg index="0" value ="honda twin charge"/>
+       <constructor-arg index="1" value ="booooo booooo"/>
+   </bean>
+
+
+    <!-- Car class xml config using xml autowire-->
+    <bean id="car" class="com.fclass.Car" autowire="constructor">
+        <constructor-arg index="0" value="honda"/>
+        <constructor-arg index="1" value="acura"/>
+        <constructor-arg index="2" value="2002"/>
+        <!--Engine and Tyre beans are defined outside and implicitly wired by Spring-->
     </bean>
+
+
+
+
 
     <bean id="bike" class="com.fclass.Bike">
     </bean>
