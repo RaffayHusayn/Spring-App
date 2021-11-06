@@ -40,12 +40,25 @@
    </bean>
 
 
-    <!-- Car class xml config using xml autowire-->
-    <bean id="car" class="com.fclass.Car" autowire="constructor">
+<!--    &lt;!&ndash; Car class xml config using xml autowire = "constructor"&ndash;&gt;-->
+<!--    <bean id="car" class="com.fclass.Car" autowire="constructor">-->
+<!--        <constructor-arg index="0" value="honda"/>-->
+<!--        <constructor-arg index="1" value="acura"/>-->
+<!--        <constructor-arg index="2" value="2002"/>-->
+<!--        &lt;!&ndash;Engine and Tyre beans are defined outside and implicitly wired by Spring&ndash;&gt;-->
+<!--    </bean>-->
+
+    <!-- Car class xml config using xml autowire = "byName" 0r "tye" which uses setter method for object dependency-->
+    <bean id="car" class="com.fclass.Car" autowire="byName">
         <constructor-arg index="0" value="honda"/>
         <constructor-arg index="1" value="acura"/>
         <constructor-arg index="2" value="2002"/>
+        <!--Engine and Tyre beans are defined outside and implicitly wired by Spring-->
     </bean>
+
+
+
+
     <bean id="bike" class="com.fclass.Bike">
     </bean>
 

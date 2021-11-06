@@ -25,6 +25,7 @@ public class Car implements Vehicle{
 
     public void setEngine(Engine engine) {
         this.engine = engine;
+        System.out.println("CAR:setter for engine");
     }
 
     public String getBrand() {
@@ -55,8 +56,16 @@ public class Car implements Vehicle{
         return tyre;
     }
 
-    public void setTyre(RaceTyre tyre) {
+    public void setTyre(SnowTyre tyre) {
         this.tyre = tyre;
+        System.out.println("CAR:setter for tyre");
+    }
+
+    public Car(String brand , String name, int year){
+        this.brand = brand;
+        this.name = name;
+        this.year = year;
+        System.out.println("using the 3 argument CAR Constructor");
     }
 
 
