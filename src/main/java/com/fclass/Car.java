@@ -68,17 +68,26 @@ public class Car implements Vehicle{
         System.out.println("using the 3 argument CAR Constructor");
     }
 
+//
+//    public Car(String brand, String name, int year, Tyre  t, Engine e){
+//        this.brand = brand;
+//        this.name = name;
+//        this.year = year;
+//        this.tyre = t;
+//        this.engine = e;
+//        System.out.println("5 argument constructor is called");
+//        System.out.println(tyre);
+//        System.out.println(engine);
+//    }
 
-    public Car(String brand, String name, int year, Tyre  t, Engine e){
-        this.brand = brand;
-        this.name = name;
-        this.year = year;
+   public Car(String b, String n, int y, Tyre t){
+        this.brand = b;
+        this.name = n;
+        this.year = y;
         this.tyre = t;
-        this.engine = e;
-        System.out.println("Car constructor is called with -> brand : "+ this.brand + " name : "+ this.name);
-        System.out.println(tyre);
-        System.out.println(engine);
-    }
+       System.out.println("4 argument constructor is called");
+   }
+
     @Override
     public void drive(){
         tyre.maxSpeed();
