@@ -9,20 +9,26 @@ import java.sql.SQLOutput;
 @Component
 public class Car implements Vehicle{
     static String staticName = "this is a static name";
-    @Value("setter brand value ")
+//    @Value("setter brand value is called ")
     String brand;
+
+
     @Value("setter tyre name")
     String name;
-    @Value("12")
+//    @Value("12")
     int year;
-//    @Autowired
+
+
+    @Autowired
     Tyre tyre;
+
     Engine engine;
 
     public Engine getEngine() {
         return engine;
     }
 
+    @Autowired
     public void setEngine(Engine engine) {
         this.engine = engine;
         System.out.println("CAR:setter for engine");
@@ -32,7 +38,9 @@ public class Car implements Vehicle{
         return brand;
     }
 
-    public void setBrand(String brand) {
+    @Autowired
+    public void setBrand(@Value("autowired setter brand")String brand) {
+        System.out.println("setter for brand is called \n");
         this.brand = brand;
     }
 
@@ -40,7 +48,9 @@ public class Car implements Vehicle{
         return name;
     }
 
-    public void setName(String name) {
+    @Autowired
+    public void setName(@Value("autowired name setter")String name) {
+        System.out.println("\n name setter is being called \n");
         this.name = name;
     }
 
@@ -55,13 +65,13 @@ public class Car implements Vehicle{
     public Tyre getTyre() {
         return tyre;
     }
-
+    //@Autowired
     public void setTyre(SnowTyre tyre) {
         this.tyre = tyre;
         System.out.println("CAR:setter for tyre");
     }
-
-    public Car(String brand , String name, int year){
+    @Autowired
+    public Car(@Value("3 cons brand") String brand ,@Value("3 constructor name") String name, @Value("12") int year){
         this.brand = brand;
         this.name = name;
         this.year = year;
@@ -79,8 +89,8 @@ public class Car implements Vehicle{
 //        System.out.println(tyre);
 //        System.out.println(engine);
 //    }
-
-   public Car(String b, String n, int y, Tyre t){
+//   @Autowired
+   public Car(@Value("constructor brand")String b,@Value("Cosntr name") String n, @Value("12") int y, Tyre t){
         this.brand = b;
         this.name = n;
         this.year = y;

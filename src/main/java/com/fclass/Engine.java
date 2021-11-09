@@ -1,9 +1,15 @@
 package com.fclass;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
+@Component
 public class Engine {
     String company;
     String noise;
-    public Engine(String company, String noise){
+
+    public Engine(@Value("annotation company") String company, @Value("annotation noise") String noise){
         this.company = company;
         this.noise = noise;
     }

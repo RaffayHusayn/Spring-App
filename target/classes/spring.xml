@@ -6,9 +6,12 @@
            http://www.springframework.org/schema/beans/spring-beans.xsd
            http://www.springframework.org/schema/context
            http://www.springframework.org/schema/context/spring-context.xsd">
-<!-- use this to use @component annotation -->
-<!--    <context:component-scan base-package="com.fclass"></context:component-scan>-->
 
+    <!-- use this to use @component annotation and also use other annotations, this not only enable annotations but also scan the package/ packages mentioned for beans and register them-->
+    <context:component-scan base-package="com.fclass"></context:component-scan>
+
+    <!-- don't need it if we're using component-scan because this only enable us to use annotation on the beans that are already registered in the xml -->
+    <context:annotation-config></context:annotation-config>
 
 
 
@@ -34,19 +37,19 @@
 
 
 
-   <bean id="engine" class="com.fclass.Engine">
-       <constructor-arg index="0" value ="honda twin charge"/>
-       <constructor-arg index="1" value ="booooo booooo"/>
-   </bean>
+<!--   <bean id="engine" class="com.fclass.Engine">-->
+<!--       <constructor-arg index="0" value ="honda twin charge"/>-->
+<!--       <constructor-arg index="1" value ="booooo booooo"/>-->
+<!--   </bean>-->
 
 
-<!--    &lt;!&ndash; Car class xml config using xml autowire = "constructor"&ndash;&gt;-->
-    <bean id="car" class="com.fclass.Car" autowire="constructor">
-        <constructor-arg index="0" value="honda"/>
-        <constructor-arg index="1" value="acura"/>
-        <constructor-arg index="2" value="2002"/>
-        <!--Engine and Tyre beans are defined outside and implicitly wired by Spring-->
-    </bean>
+    <!-- Car class xml config using xml autowire = "constructor"-->
+<!--    <bean id="car" class="com.fclass.Car">-->
+<!--        <constructor-arg index="0" value="honda"/>-->
+<!--        <constructor-arg index="1" value="acura"/>-->
+<!--        <constructor-arg index="2" value="2002"/>-->
+<!--        &lt;!&ndash;Engine and Tyre beans are defined outside and implicitly wired by Spring&ndash;&gt;-->
+<!--    </bean>-->
 
     <!-- Car class xml config using xml autowire = "byName" 0r "tye" which uses setter method for object dependency-->
 <!--    <bean id="car" class="com.fclass.Car" autowire="byType">&lt;!&ndash;autowire="byName" could also be used&ndash;&gt;-->
@@ -64,7 +67,7 @@
 
     <bean id="tyre" class="com.fclass.SnowTyre">
         <constructor-arg index= "0" type="java.lang.String" value="Osaka"/> <!-- uses the Constructor of the Tyre Class-->
-        <property name="brand" value="setter tyre brand"/> <!-- uses the Setter method of the Tyre Class-->
+        <property name="brand" value="setter tyre not brand"/> <!-- uses the Setter method of the Tyre Class-->
     </bean>
 
 </beans>

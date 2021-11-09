@@ -12,9 +12,9 @@ public class AppConfig {
 //    public Car getCar(){
 //        return new Car();
 //    }
-    @Bean
-    @Primary
-    public RaceTyre getTyre(){
-        return new RaceTyre("Annotation brand");
-    }
+//    @Bean
+//    @Primary
+//    public RaceTyre getTyre(){
+//        return new RaceTyre("Annotation brand");
+//    }
 }

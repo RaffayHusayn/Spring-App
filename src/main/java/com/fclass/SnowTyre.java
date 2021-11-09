@@ -1,13 +1,14 @@
 package com.fclass;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
 @Component
-//@Primary
+@Primary
 public class SnowTyre implements Tyre{
     String brand ;
-    public SnowTyre(String b){
+    public SnowTyre(@Value("raffay tyre")String b){
         this.brand = b ;
     }
 
