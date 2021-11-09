@@ -76,6 +76,7 @@ public class Car implements Vehicle{
         this.name = name;
         this.year = year;
         System.out.println("using the 3 argument CAR Constructor");
+        System.out.println("3 ARG CONSTRUCTOR > Brand : "+ brand + " > Name : "+ name + " > Year : "+ year + " > Tyre : "+ tyre+ " > Engine : "+ engine);
     }
 
 //
