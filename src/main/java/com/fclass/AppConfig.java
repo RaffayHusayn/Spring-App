@@ -1,17 +1,11 @@
 package com.fclass;
 
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Primary;
+import org.springframework.context.annotation.*;
 
 @Configuration
 @ComponentScan("com.fclass")
+@Import({SecondConfig.class})
 public class AppConfig {
-//    @Bean
-//    public Car getCar(){
-//        return new Car();
-//    }
 //    @Bean
 //    @Primary
 //    public RaceTyre getTyre(){

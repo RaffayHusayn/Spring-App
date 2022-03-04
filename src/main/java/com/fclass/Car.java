@@ -4,9 +4,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
 import java.sql.SQLOutput;
 
-@Component
+//@Component
 public class Car implements Vehicle{
     static String staticName = "this is a static name";
 //    @Value("setter brand value is called ")
@@ -38,6 +39,9 @@ public class Car implements Vehicle{
         return brand;
     }
 
+    public Car(){
+        System.out.println("Constructor**************");
+    }
     @Autowired
     public void setBrand(@Value("autowired setter brand")String brand) {
         System.out.println("setter for brand is called \n");
@@ -106,4 +110,12 @@ public class Car implements Vehicle{
         System.out.println("the engine is driving : " + engine);
         System.out.println("||| brand : "+ brand + " ||| name : "+ name + "||| Year : "+ year);
     }
+    @PostConstruct
+    public void postContructor(){
+        System.out.println("--------------post constructor called-----------------");
+    }
+    public void init(){
+        System.out.println("------------init method is called ------------------");
+    }
+
 }
