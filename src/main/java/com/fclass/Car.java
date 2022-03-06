@@ -189,8 +189,8 @@ public class Car implements Vehicle {
      */
     public void drive(){
         tyre.maxSpeed();
-        System.out.println(engine.noise);
-        System.out.println(tyre.);
+        System.out.println(engine.getNoise());
+        System.out.println(tyre.getBrand());
         System.out.println("Car is driving");
     }
 }

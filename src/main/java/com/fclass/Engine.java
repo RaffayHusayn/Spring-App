@@ -24,4 +24,7 @@ public class Engine {
                 ", noise='" + noise + '\'' +
                 '}';
     }
+    public String getNoise(){
+        return noise;
+    }
 }
